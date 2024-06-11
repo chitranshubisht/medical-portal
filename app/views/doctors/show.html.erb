@@ -1,0 +1,7 @@
+<h1>Patient Details</h1>
+<p><strong>Name:</strong> <%= @patient.name %></p>
+<p><strong>Date of Birth:</strong> <%= @patient.date_of_birth %></p>
+<p><strong>Address:</strong> <%= @patient.address %></p>
+<p><strong>Phone:</strong> <%= @patient.phone %></p>
+<p><strong>Registered On:</strong> <%= @patient.registered_on %></p>
+<%= link_to 'Back', doctors_path, class: 'btn btn-secondary mt-3' %>

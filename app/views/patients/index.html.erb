@@ -1,0 +1,27 @@
+<h1>Patients</h1>
+<%= link_to 'Register New Patient', new_patient_path, class: 'btn btn-primary' %>
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date of Birth</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient.name %></td>
+        <td><%= patient.date_of_birth %></td>
+        <td><%= patient.address %></td>
+        <td><%= patient.phone %></td>
+        <td>
+          <%= link_to 'Edit', edit_patient_path(patient), class: 'btn btn-warning btn-sm' %>
+          <%= link_to 'Delete', patient, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
